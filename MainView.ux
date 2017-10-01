@@ -1,0 +1,22 @@
+<App>
+	<!-- <HelloUno ux:Global="HelloUno" /> -->
+
+    <Panel>
+         <JavaScript>
+            var LogModule = require("HelloUno");
+            var cnt = 0;
+            
+            function print(args){
+            LogModule.Log("Hello from JavaScript!" + cnt);
+            cnt++;
+            }
+
+            module.exports ={
+            	print : print
+            }
+        </JavaScript>
+        <Button Text="Click!!">
+            <Clicked Handler="{print}" />
+        </Button>
+    </Panel>
+</App>
